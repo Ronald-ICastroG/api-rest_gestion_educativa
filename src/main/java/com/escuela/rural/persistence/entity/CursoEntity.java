@@ -1,5 +1,6 @@
 package com.escuela.rural.persistence.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,11 +9,11 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 
-@Entity
+
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 @Table(name="cursos")
+@Entity
 public class CursoEntity {
 
     @Id
@@ -23,13 +24,14 @@ public class CursoEntity {
     @Column(name="cur_name",length = 60,nullable = false)
     private String curName;
 
-    @Column(name="cur_cupo",nullable = false)
+    @Column(name="cur_cupo")
     private Integer curCupo;
 
-    @Column(name="cur_active",columnDefinition = "TINYINT",nullable = false)
+    @Column(name="cur_active",columnDefinition = "TINYINT(1)")
     private Boolean curActive;
 
     @OneToMany(targetEntity = AsignaturaEntity.class,mappedBy = "curso",fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<AsignaturaEntity> asignaturas;
 
 }

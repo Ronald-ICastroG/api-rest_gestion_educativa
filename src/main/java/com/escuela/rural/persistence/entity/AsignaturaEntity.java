@@ -20,7 +20,7 @@ public class AsignaturaEntity {
     @Column(name="asg_name",nullable = false)
     private String asgName;
 
-    @Column(name="asg_active",columnDefinition = "TINYINT",nullable = false)
+    @Column(name="asg_active",columnDefinition = "TINYINT",nullable = false,updatable = false)
     private Boolean asgActive;
 
     @ManyToOne(targetEntity = CursoEntity.class,fetch = FetchType.LAZY)
