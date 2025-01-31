@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 
 @Entity
 @Data
@@ -26,5 +28,8 @@ public class CursoEntity {
 
     @Column(name="cur_active",columnDefinition = "TINYINT",nullable = false)
     private Boolean curActive;
+
+    @OneToMany(targetEntity = AsignaturaEntity.class,mappedBy = "curso",fetch = FetchType.LAZY)
+    private List<AsignaturaEntity> asignaturas;
 
 }
