@@ -44,7 +44,7 @@ public class CursoController {
     }
 
 
-    @DeleteMapping
+    @DeleteMapping("/{curId}")
     public ResponseEntity<Void> deleteById(@PathVariable int curId){
         if(this.cursoService.exists(curId)){
             this.cursoService.deleteById(curId);
