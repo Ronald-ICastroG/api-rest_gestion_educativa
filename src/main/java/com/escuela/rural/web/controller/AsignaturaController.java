@@ -24,12 +24,12 @@ public class AsignaturaController {
     }
 
     @GetMapping("/{asgId}")
-    public ResponseEntity<AsignaturaEntity> getById(@PathVariable int asgId) {
+    public ResponseEntity<AsignaturaEntity> getById(@PathVariable long asgId) {
         return ResponseEntity.ok(this.asignaturaService.getById(asgId));
     }
 
     @PostMapping
-    public ResponseEntity<AsignaturaEntity> save(AsignaturaEntity asignaturaEntity) {
+    public ResponseEntity<AsignaturaEntity> save(@RequestBody AsignaturaEntity asignaturaEntity) {
         if (asignaturaEntity.getAsgId() == null && !this.asignaturaService.exists(asignaturaEntity.getAsgId())) {
             return new ResponseEntity<>(this.asignaturaService.save(asignaturaEntity), HttpStatus.CREATED);
         } else {
@@ -38,7 +38,7 @@ public class AsignaturaController {
     }
 
     @PutMapping
-    public ResponseEntity<AsignaturaEntity> update(AsignaturaEntity asignaturaEntity) {
+    public ResponseEntity<AsignaturaEntity> update(@RequestBody AsignaturaEntity asignaturaEntity) {
         if (asignaturaEntity.getAsgId() != null || this.asignaturaService.exists(asignaturaEntity.getAsgId())) {
             return new ResponseEntity<>(this.asignaturaService.save(asignaturaEntity), HttpStatus.OK);
         } else {
@@ -46,10 +46,10 @@ public class AsignaturaController {
         }
     }
 
-        @DeleteMapping
-        public ResponseEntity<Void> deleteById (long asgId){
+        @DeleteMapping("/{asgId}")
+        public ResponseEntity<Void> deleteById (@PathVariable long asgId){
             if (this.asignaturaService.exists(asgId)) {
-                this.asignaturaService.deleteById((int) asgId);
+                this.asignaturaService.deleteById(asgId);
                 return ResponseEntity.accepted().build();
             } else {
                 return ResponseEntity.badRequest().build();
