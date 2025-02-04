@@ -26,9 +26,17 @@ public class AsignaturaEntity {
 
     @Column(name="cur_id",nullable=false)
     private Integer asgCurid;
+    
+    @Column(name="doc_id",nullable = false)
+    private Long asgDocid;
 
     @ManyToOne(targetEntity = CursoEntity.class,fetch = FetchType.LAZY)
     @JoinColumn(name="cur_id",referencedColumnName = "cur_id",insertable = false,updatable = false)
     @JsonIgnore
     private CursoEntity curso;
+    
+    @ManyToOne(targetEntity = DocenteEntity.class,fetch = FetchType.LAZY)
+    @JoinColumn(name="doc_id",referencedColumnName = "doc_id",insertable = false,updatable = false)
+    @JsonIgnore
+    private DocenteEntity docente;
  }
