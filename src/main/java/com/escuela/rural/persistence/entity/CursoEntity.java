@@ -31,7 +31,6 @@ public class CursoEntity {
     private Boolean curActive;
 
     @OneToMany(targetEntity = AsignaturaEntity.class,mappedBy = "curso",fetch = FetchType.LAZY)
-    @JsonIgnore
     private List<AsignaturaEntity> asignaturas;
 
 }

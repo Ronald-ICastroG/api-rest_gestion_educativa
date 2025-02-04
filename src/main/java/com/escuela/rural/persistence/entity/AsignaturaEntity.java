@@ -24,7 +24,7 @@ public class AsignaturaEntity {
     @Column(name="asg_active",columnDefinition = "TINYINT",nullable = false,updatable = false)
     private Boolean asgActive;
 
-    @Column(name="cur_id")
+    @Column(name="cur_id",nullable=false)
     private Integer asgCurid;
 
     @ManyToOne(targetEntity = CursoEntity.class,fetch = FetchType.LAZY)
