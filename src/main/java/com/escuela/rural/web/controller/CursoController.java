@@ -49,7 +49,7 @@ public class CursoController {
         if(this.cursoService.exists(curId)){
             this.cursoService.deleteById(curId);
         }
-        return ResponseEntity.ok().build();
+        return ResponseEntity.accepted().build();
     }
 
 }

@@ -30,11 +30,8 @@ public class AsignaturaController {
 
     @PostMapping
     public ResponseEntity<AsignaturaEntity> save(@RequestBody AsignaturaEntity asignaturaEntity) {
-        if (asignaturaEntity.getAsgId() == null && !this.asignaturaService.exists(asignaturaEntity.getAsgId())) {
             return new ResponseEntity<>(this.asignaturaService.save(asignaturaEntity), HttpStatus.CREATED);
-        } else {
-            return ResponseEntity.badRequest().build();
-        }
+
     }
 
     @PutMapping
