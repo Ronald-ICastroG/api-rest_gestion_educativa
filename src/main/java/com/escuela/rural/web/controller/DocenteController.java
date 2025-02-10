@@ -1,7 +1,7 @@
 package com.escuela.rural.web.controller;
 
 import com.escuela.rural.persistence.entity.DocenteEntity;
-import com.escuela.rural.service.IDocenteService;
+import com.escuela.rural.service.interfaces.IDocenteService;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

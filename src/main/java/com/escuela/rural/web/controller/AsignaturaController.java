@@ -1,7 +1,7 @@
 package com.escuela.rural.web.controller;
 
 import com.escuela.rural.persistence.entity.AsignaturaEntity;
-import com.escuela.rural.service.IAsignaturaService;
+import com.escuela.rural.service.interfaces.IAsignaturaService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,11 +1,8 @@
 package com.escuela.rural.web.controller;
 
 import com.escuela.rural.persistence.entity.CursoEntity;
-import com.escuela.rural.service.CursoService;
-import com.escuela.rural.service.ICursoService;
-import org.apache.coyote.Response;
+import com.escuela.rural.service.interfaces.ICursoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

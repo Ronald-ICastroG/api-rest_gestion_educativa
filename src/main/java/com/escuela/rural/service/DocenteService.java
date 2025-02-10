@@ -2,6 +2,7 @@ package com.escuela.rural.service;
 
 import com.escuela.rural.persistence.entity.DocenteEntity;
 import com.escuela.rural.persistence.repository.DocenteRepository;
+import com.escuela.rural.service.interfaces.IDocenteService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class DocenteService implements IDocenteService{
+public class DocenteService implements IDocenteService {
 private final DocenteRepository docenteRepository;
 
     public DocenteService(DocenteRepository docenteRepository) {
