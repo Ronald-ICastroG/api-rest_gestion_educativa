@@ -51,4 +51,10 @@ private final DocenteRepository docenteRepository;
         return this.docenteRepository.existsById(docId);
     }
 
+    @Override
+    public void deleteByDocName(String docName) {
+        this.docenteRepository.deleteByDocName(docName);
+        System.out.println("Docente con nombre: "+docName+" eliminado");
+    }
+
 }
