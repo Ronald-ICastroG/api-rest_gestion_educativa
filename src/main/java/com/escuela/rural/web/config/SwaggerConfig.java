@@ -33,7 +33,10 @@ import io.swagger.v3.oas.annotations.servers.Servers;
                         url = "https://localhost:8080/dev/api/v1/geducativa"
                 ),
                 @Server(description = "PROD SERVER",
-                        url = "https://localhost:8080/prod/api/v1/geducativa"
+                        url = "https://localhost:8090/prod/api/v1/geducativa"
+                ),
+                @Server(description="QA SERVER",
+                        url="http://localhost:8082/qa/api/v1/geducativa"
                 )
 }
 )

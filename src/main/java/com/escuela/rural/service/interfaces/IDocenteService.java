@@ -22,6 +22,8 @@ public interface IDocenteService {
 
     Boolean exists(long docId);
 
+    void deleteByDocName(String docName);
+
 
 
 

@@ -35,7 +35,7 @@ public class DocenteController {
     }
 
     @Operation(summary="Get docente given id {docId}")
-    @GetMapping("/{docId}")
+    @GetMapping("/{docId:[0-9]+}")
     public ResponseEntity<DocenteEntity>getById(@PathVariable long docId){
         return ResponseEntity.ok(this.docenteService.getById(docId));
     }
@@ -60,12 +60,19 @@ public class DocenteController {
 
 
     @Operation(summary = "Delete docente given id {docId}")
-    @DeleteMapping("/{docId}")
+    @DeleteMapping("/{docId:[0-9]+}")
     public ResponseEntity<Void> eliminarDocente(@PathVariable long docId){
         if(this.docenteService.exists(docId)){
             this.docenteService.deleteById(docId);
          return ResponseEntity.noContent().build();
         }
         return ResponseEntity.badRequest().build();
+    }
+
+    @Operation(summary = "Delete docente given the name {docName}, using JPQL native query")
+    @DeleteMapping("/name/{docName:[a-zA-Z]+}")
+    public ResponseEntity<Void> deleteByDocName(@PathVariable String docName){
+        this.docenteService.deleteByDocName(docName);
+        return ResponseEntity.noContent().build();
     }
 }
