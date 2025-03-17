@@ -32,4 +32,6 @@ public class DocenteEntity {
 
     @OneToMany(targetEntity = AsignaturaEntity.class,mappedBy = "docente",fetch =FetchType.LAZY)
     private List<AsignaturaEntity>asignaturas;
+
+
 }

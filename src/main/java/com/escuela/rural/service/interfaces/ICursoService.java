@@ -1,4 +1,4 @@
-package com.escuela.rural.service;
+package com.escuela.rural.service.interfaces;
 
 import com.escuela.rural.persistence.entity.CursoEntity;
 import org.springframework.stereotype.Service;

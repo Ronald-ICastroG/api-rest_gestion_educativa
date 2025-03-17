@@ -3,6 +3,7 @@ package com.escuela.rural.service;
 import com.escuela.rural.persistence.entity.CursoEntity;
 import com.escuela.rural.persistence.repository.CursoPagSortRepository;
 import com.escuela.rural.persistence.repository.CursoRepository;
+import com.escuela.rural.service.interfaces.ICursoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

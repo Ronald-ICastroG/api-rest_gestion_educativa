@@ -2,6 +2,7 @@ package com.escuela.rural.service;
 
 import com.escuela.rural.persistence.entity.AsignaturaEntity;
 import com.escuela.rural.persistence.repository.AsignaturaRepository;
+import com.escuela.rural.service.interfaces.IAsignaturaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
