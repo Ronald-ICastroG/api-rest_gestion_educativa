@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface DocenteRepository extends JpaRepository<DocenteEntity,Long> {
+    
     @Modifying
     @Transactional
     @Query(value = "DELETE FROM docentes d WHERE d.doc_name = :docName",nativeQuery = true)

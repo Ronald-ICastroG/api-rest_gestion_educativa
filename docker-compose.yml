@@ -1,0 +1,22 @@
+
+
+services:
+
+
+  mysql_geducativa:
+    image: mysql:8.0
+    container_name: server_mysql_geducativadev
+    restart: always
+
+    environment:
+      MYSQL_DATABASE: 'geducativa_dev_docker'
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: 'admin'
+      MYSQL_ROOT_PASSWORD: 'admin'
+
+    ports:
+      - '3307:3306'
+    volumes:
+    - info-geducativa_dev:/var/lib/mysql
+volumes:
+  info-geducativa_dev:
